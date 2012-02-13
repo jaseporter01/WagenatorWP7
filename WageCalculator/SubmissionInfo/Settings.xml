@@ -1,0 +1,6 @@
+<MarketplaceDetails>
+  <SmallAppTile>SmalAppTile.png</SmallAppTile>
+  <LargeAppTile>LargeAppTile.png</LargeAppTile>
+  <PCAppTile>MarketplaceTile.png</PCAppTile>
+  <ScreenShots>SplashScreenImage.png;Hourly_Blank.png;Hourly_Custom.png;Hourly_Light.png;Salary_Blank.png;Salary_Deductions.png;Salary_Custom.png;Salary_Light.png;</ScreenShots>
+</MarketplaceDetails>
