@@ -62,7 +62,8 @@
                              FlowDirection="RightToLeft"
                              Foreground="Green"
                              FontSize="22"
-                             FontWeight="Normal" />
+                             FontWeight="Normal"
+                             BorderBrush="Green" />
 
                     <TextBlock Height="Auto"
                                HorizontalAlignment="Left"
@@ -88,7 +89,8 @@
                                  FlowDirection="RightToLeft"
                                  Foreground="Red"
                                  FontSize="22"
-                                 FontWeight="Normal" />
+                                 FontWeight="Normal"
+                                 BorderBrush="Red" />
                         <TextBlock Height="Auto"
                                    Width="Auto"
                                    HorizontalAlignment="Right"
@@ -183,9 +185,10 @@
                                        Grid.Column="0"
                                        HorizontalAlignment="Right"
                                        Foreground="Red"
-                                       Margin="0,0,2,0"
+                                       Margin="2,0"
                                        Text="Net Pay"
-                                       FontWeight="SemiBold" />
+                                       FontWeight="SemiBold"
+                                       FlowDirection="LeftToRight" />
                             <TextBlock Grid.Column="1"
                                        HorizontalAlignment="Center"
                                        Margin="2,0"
@@ -196,7 +199,8 @@
                                        HorizontalAlignment="Right"
                                        Foreground="Green"
                                        Text="Gross Pay"
-                                       FontWeight="SemiBold" />
+                                       FontWeight="SemiBold"
+                                       Margin="2,0" />
                         </Grid>
 
                     </StackPanel>
@@ -206,7 +210,6 @@
                                 Grid.Row="5"
                                 Grid.ColumnSpan="2"
                                 HorizontalAlignment="Stretch"
-                                VerticalAlignment="Center"
                                 FlowDirection="LeftToRight">
 
                         <TextBlock x:Name="textBlockHourRate"
@@ -216,7 +219,8 @@
 
                         <Grid HorizontalAlignment="Left">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="168" />
+                                <ColumnDefinition Width="Auto"
+                                                  MinWidth="168" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="150*" />
                             </Grid.ColumnDefinitions>
@@ -224,17 +228,19 @@
                             <TextBlock HorizontalAlignment="Right"
                                        x:Name="HourlyRateDeduction"
                                        Text="{Binding Path=BaseHourlyRateDeductionText, Mode=TwoWay}"
-                                       Width="Auto"
                                        FlowDirection="RightToLeft"
                                        FontSize="22"
-                                       Foreground="Red" />
+                                       Foreground="Red"
+                                       Height="30"
+                                       VerticalAlignment="Top"
+                                       Margin="2,0" />
                             <TextBlock Height="Auto"
                                        HorizontalAlignment="Center"
                                        Text="/"
                                        Grid.Column="1"
                                        FlowDirection="RightToLeft"
                                        FontSize="22"
-                                       Margin="2" />
+                                       Margin="2,0" />
                             <TextBlock Height="Auto"
                                        HorizontalAlignment="Left"
                                        x:Name="HourlyRate"
@@ -242,10 +248,9 @@
                                        VerticalAlignment="Stretch"
                                        Grid.Column="2"
                                        FlowDirection="RightToLeft"
-                                       Width="Auto"
                                        Foreground="Green"
                                        FontSize="22"
-                                       Margin="0" />
+                                       Margin="2,0" />
                         </Grid>
                     </StackPanel>
 
@@ -265,7 +270,8 @@
                                    VerticalAlignment="Stretch" />
                         <Grid HorizontalAlignment="Left">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="145" />
+                                <ColumnDefinition Width="Auto"
+                                                  MinWidth="145" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="150*" />
                             </Grid.ColumnDefinitions>
@@ -275,11 +281,10 @@
                                        Text="{Binding Path=OverTimeHourlyRateDeductionText, Mode=TwoWay}"
                                        VerticalAlignment="Stretch"
                                        Grid.Column="0"
-                                       Width="Auto"
                                        FlowDirection="RightToLeft"
                                        FontSize="22"
                                        Foreground="Red"
-                                       Margin="0" />
+                                       Margin="2,0" />
                             <TextBlock Height="Auto"
                                        HorizontalAlignment="Center"
                                        Text="/"
@@ -287,7 +292,7 @@
                                        Grid.Column="1"
                                        FlowDirection="RightToLeft"
                                        FontSize="22"
-                                       Margin="2" />
+                                       Margin="2,0" />
                             <TextBlock Height="Auto"
                                        HorizontalAlignment="Left"
                                        x:Name="OverTimeRate"
@@ -295,10 +300,9 @@
                                        VerticalAlignment="Stretch"
                                        Grid.Column="2"
                                        FlowDirection="RightToLeft"
-                                       Width="Auto"
                                        Foreground="Green"
                                        FontSize="22"
-                                       Margin="0" />
+                                       Margin="2,0" />
                         </Grid>
 
                     </StackPanel>
@@ -313,7 +317,8 @@
                                    VerticalAlignment="Stretch" />
                         <Grid HorizontalAlignment="Left">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="148" />
+                                <ColumnDefinition Width="Auto"
+                                                  MinWidth="148" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="150*" />
                             </Grid.ColumnDefinitions>
@@ -323,12 +328,12 @@
                                        FlowDirection="RightToLeft"
                                        FontSize="22"
                                        Foreground="Red"
-                                       Margin="0,0,0,4" />
+                                       Margin="0,0,2,0" />
                             <TextBlock Text="/"
                                        Grid.Column="1"
                                        FlowDirection="RightToLeft"
                                        FontSize="22"
-                                       Margin="2"
+                                       Margin="2,0"
                                        VerticalAlignment="Stretch"
                                        HorizontalAlignment="Center" />
                             <TextBlock HorizontalAlignment="Left"
@@ -338,7 +343,8 @@
                                        Foreground="Green"
                                        FontSize="22"
                                        TextAlignment="Center"
-                                       Grid.Column="2" />
+                                       Grid.Column="2"
+                                       Margin="2,0" />
                         </Grid>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal"
@@ -350,7 +356,8 @@
                                    VerticalAlignment="Stretch" />
                         <Grid HorizontalAlignment="Left">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="138" />
+                                <ColumnDefinition Width="Auto"
+                                                  MinWidth="138" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="150*" />
                             </Grid.ColumnDefinitions>
@@ -361,24 +368,25 @@
                                        FontSize="{Binding dFontSize, Mode=TwoWay}"
                                        Foreground="Red"
                                        FontWeight="Normal"
-                                       VerticalAlignment="Stretch" />
+                                       VerticalAlignment="Stretch"
+                                       Margin="0,0,4,0" />
 
-                            <TextBlock HorizontalAlignment="Center"
-                                       Text="/"
+                            <TextBlock Text="/"
                                        Grid.Column="1"
                                        FlowDirection="RightToLeft"
                                        FontSize="{Binding Path=dFontSize, Mode=TwoWay}"
-                                       Margin="2"
-                                       VerticalAlignment="Stretch" />
+                                       Margin="0,0,4,0"
+                                       VerticalAlignment="Stretch"
+                                        />
                             <TextBlock HorizontalAlignment="Right"
                                        x:Name="BiWeeklySalary"
                                        Text="{Binding BiWeeklyPayText, Mode=TwoWay}"
-                                       VerticalAlignment="Top"
                                        FlowDirection="RightToLeft"
                                        Grid.Column="2"
                                        Foreground="Green"
                                        FontSize="{Binding dFontSize, Mode=TwoWay}"
-                                       FontWeight="Normal" />
+                                       FontWeight="Normal"
+                                       Margin="0,0,3,0" />
                         </Grid>
                     </StackPanel>
 
@@ -387,7 +395,6 @@
                                 Grid.Row="9"
                                 Grid.ColumnSpan="2"
                                 HorizontalAlignment="Stretch"
-                                VerticalAlignment="Center"
                                 FlowDirection="LeftToRight">
 
                         <TextBlock x:Name="textBlockAnnSal"
@@ -396,9 +403,11 @@
                                    VerticalAlignment="Stretch" />
                         <Grid HorizontalAlignment="Stretch">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="155" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="160*" />
+                                <ColumnDefinition Width="Auto"
+                                                  MinWidth="148" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto"
+                                                  MinWidth="53" />
                             </Grid.ColumnDefinitions>
 
                             <TextBlock Height="Auto"
@@ -410,16 +419,22 @@
                                        FlowDirection="RightToLeft"
                                        Foreground="Red"
                                        Width="Auto"
+                                       FontSize="{Binding dFontSize, Mode=TwoWay}"
+                                       Margin="2,0" />
+                            <TextBlock Text="/"
+                                       Grid.Column="1"
+                                       FlowDirection="RightToLeft"
                                        FontSize="22"
-                                       Margin="0,0,0,0" />
-                            <TextBlock Height="Auto"
-                                       HorizontalAlignment="Center"
+                                       Margin="2,0"
+                                       VerticalAlignment="Stretch"
+                                       HorizontalAlignment="Center" />
+                            <!--<TextBlock Height="Auto"
                                        Text="/"
                                        VerticalAlignment="Stretch"
                                        Grid.Column="1"
                                        FlowDirection="RightToLeft"
                                        FontSize="{Binding Path=dFontSize, Mode=TwoWay}"
-                                       Margin="0" />
+                                       Margin="-2,2,6,2" d:LayoutOverrides="Width" />-->
                             <TextBlock Height="Auto"
                                        HorizontalAlignment="Left"
                                        x:Name="AnnualSalary"
@@ -430,7 +445,7 @@
                                        Width="Auto"
                                        FontSize="{Binding Path=dFontSize, Mode=TwoWay}"
                                        Foreground="Green"
-                                       Margin="0,0,0,0"
+                                       Margin="1,0,2,0"
                                        FontWeight="Normal" />
                         </Grid>
                     </StackPanel>
@@ -480,7 +495,8 @@
                              Foreground="Green"
                              FontSize="22"
                              Margin="0"
-                             FontWeight="Normal" />
+                             FontWeight="Normal"
+                             BorderBrush="Green" />
 
                     <TextBlock Height="Auto"
                                Name="textBlockSalDeductions"
@@ -505,7 +521,8 @@
                                  FlowDirection="RightToLeft"
                                  Foreground="Red"
                                  FontSize="22"
-                                 FontWeight="Normal" />
+                                 FontWeight="Normal"
+                                 BorderBrush="Red" />
                         <TextBlock Height="Auto"
                                    Width="Auto"
                                    HorizontalAlignment="Right"
