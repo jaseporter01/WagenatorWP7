@@ -41,8 +41,7 @@ namespace WageCalculator
             // Phone-specific initialization
             InitializePhoneApplication();
 
-            // Display the metro grid helper.    
-            MetroGridHelper.IsVisible = true;
+
 
             // Show graphics profiling information while debugging.
             if (System.Diagnostics.Debugger.IsAttached)
@@ -51,7 +50,7 @@ namespace WageCalculator
                 Application.Current.Host.Settings.EnableFrameRateCounter = true;
 
                 // Display the metro grid helper.    
-                MetroGridHelper.IsVisible = true;
+                MetroGridHelper.IsVisible = false;
 
                 // Show the areas of the app that are being redrawn in each frame.
                 //Application.Current.Host.Settings.EnableRedrawRegions = true;

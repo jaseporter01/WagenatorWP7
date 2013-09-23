@@ -54,6 +54,10 @@ namespace WageCalculator.ViewModel
             _IsSalWeeksDisplayValueEnabled = false;
             _SalWeeksDisplayValue = 52;  // 1 year
             _SalWeeksContentValue = "Full Year";
+
+            // Cori Code
+            Recalculate();
+            SalRecalculate();
         }
 
         ////public override void Cleanup()
@@ -81,11 +85,8 @@ namespace WageCalculator.ViewModel
             get { return _dFontSize; }
             set
             {
-
                 if (_dFontSize == value)
                     return;
-
-
 
                 _dFontSize = value;
 
@@ -105,6 +106,25 @@ namespace WageCalculator.ViewModel
                     return;
                 _IsNotFullTime = value;
                 RaisePropertyChanged("IsNotFullTime");
+                //Recalculate();
+
+                //Cori Code
+                RaisePropertyChanged("IsFullTime");
+                Recalculate();
+            }
+        }
+
+        //Cori Code
+        public bool IsFullTime
+        {
+            get { return !_IsNotFullTime; }
+            set
+            {
+                if (!_IsNotFullTime == value)
+                    return;
+                _IsNotFullTime = !value;
+                RaisePropertyChanged("IsNotFullTime");
+                RaisePropertyChanged("IsFullTime");
                 Recalculate();
             }
         }
@@ -134,9 +154,27 @@ namespace WageCalculator.ViewModel
                     return;
                 _IsNotFullYear = value;
                 RaisePropertyChanged("IsNotFullYear");
+                RaisePropertyChanged("IsFullYear"); // Cori Code
                 Recalculate();
             }
         }
+
+        // Cori Code
+        public bool IsFullYear
+        {
+            get { return !IsNotFullYear; }
+            set
+            {
+                if (!_IsNotFullYear == value)
+                    return;
+                _IsNotFullYear = !value;
+                RaisePropertyChanged("IsNotFullYear");
+                RaisePropertyChanged("IsFullYear");
+                Recalculate();
+            }
+        }
+
+
 
         private string _weeksContentValue;
         public string WeeksContentValue
@@ -470,6 +508,22 @@ namespace WageCalculator.ViewModel
                     return;
                 _IsSalNotFullTime = value;
                 RaisePropertyChanged("IsSalNotFullTime");
+                RaisePropertyChanged("IsSalFullTime"); // Cori Code
+                SalRecalculate();
+            }
+        }
+
+        // Cori Code
+        public bool IsSalFullTime
+        {
+            get { return !_IsSalNotFullTime; }
+            set
+            {
+                if (!_IsSalNotFullTime == value)
+                    return;
+                _IsSalNotFullTime = !value;
+                RaisePropertyChanged("IsSalNotFullTime");
+                RaisePropertyChanged("IsSalFullTime");
                 SalRecalculate();
             }
         }
@@ -596,6 +650,21 @@ namespace WageCalculator.ViewModel
             }
         }
 
+        //private bool _IsSalNotFullYear;
+        //public bool IsSalNotFullYear
+        //{
+        //    get { return _IsSalNotFullYear; }
+        //    set
+        //    {
+        //        if (_IsSalNotFullYear == value)
+        //            return;
+        //        _IsSalNotFullYear = value;
+        //        RaisePropertyChanged("IsSalNotFullYear");
+        //        SalRecalculate();
+        //    }
+        //}
+
+        // Cori Code
         private bool _IsSalNotFullYear;
         public bool IsSalNotFullYear
         {
@@ -606,6 +675,20 @@ namespace WageCalculator.ViewModel
                     return;
                 _IsSalNotFullYear = value;
                 RaisePropertyChanged("IsSalNotFullYear");
+                RaisePropertyChanged("IsSalFullYear");
+                SalRecalculate();
+            }
+        }
+        public bool IsSalFullYear
+        {
+            get { return !_IsSalNotFullYear; }
+            set
+            {
+                if (!_IsSalNotFullYear == value)
+                    return;
+                _IsSalNotFullYear = !value;
+                RaisePropertyChanged("IsSalNotFullYear");
+                RaisePropertyChanged("IsSalFullYear");
                 SalRecalculate();
             }
         }

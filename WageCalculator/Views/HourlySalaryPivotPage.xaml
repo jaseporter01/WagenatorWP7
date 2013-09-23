@@ -7,6 +7,8 @@
                             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                            xmlns:WageCalculator_Model="clr-namespace:WageCalculator.Model"
                             mc:Ignorable="d"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
                             FontSize="22"
@@ -51,7 +53,26 @@
                                Text="Base Hourly Rate"
                                VerticalAlignment="Center"
                                Grid.Row="0" />
-                    <TextBox Height="Auto"
+
+                    <toolkit:PhoneTextBox Height="Auto"
+                                          HorizontalAlignment="Right"
+                                          x:Name="BaseHourlyRate"
+                                          Text="{Binding Path=BaseHourlyRate, Mode=TwoWay}"
+                                          InputScope="CurrencyAmount"
+                                          Grid.Column="1"
+                                          Width="167"
+                                          HorizontalContentAlignment="Right"
+                                          FlowDirection="RightToLeft"
+                                          Foreground="Green"
+                                          FontSize="22"
+                                          FontWeight="Normal"
+                                          BorderBrush="Green">
+
+                        <i:Interaction.Behaviors>
+                            <WageCalculator_Model:SelectAllTextBoxBehavior />
+                        </i:Interaction.Behaviors>
+                    </toolkit:PhoneTextBox>
+                    <!--<TextBox Height="Auto"
                              HorizontalAlignment="Right"
                              x:Name="BaseHourlyRate"
                              Text="{Binding Path=BaseHourlyRate, Mode=TwoWay}"
@@ -63,7 +84,7 @@
                              Foreground="Green"
                              FontSize="22"
                              FontWeight="Normal"
-                             BorderBrush="Green" />
+                             BorderBrush="Green" />-->
 
                     <TextBlock Height="Auto"
                                HorizontalAlignment="Left"
@@ -76,7 +97,28 @@
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 HorizontalAlignment="Right">
-                        <TextBox Height="Auto"
+
+                        <toolkit:PhoneTextBox Height="Auto"
+                                              HorizontalAlignment="Right"
+                                              x:Name="Deductions"
+                                              Text="{Binding Path=DeductionPercentage, Mode=TwoWay}"
+                                              InputScope="CurrencyAmount"
+                                              VerticalAlignment="Top"
+                                              Grid.Row="1"
+                                              Grid.Column="1"
+                                              Width="130"
+                                              HorizontalContentAlignment="Right"
+                                              FlowDirection="RightToLeft"
+                                              Foreground="Red"
+                                              FontSize="22"
+                                              FontWeight="Normal"
+                                              BorderBrush="Red">
+
+                            <i:Interaction.Behaviors>
+                                <WageCalculator_Model:SelectAllTextBoxBehavior />
+                            </i:Interaction.Behaviors>
+                        </toolkit:PhoneTextBox>
+                        <!--<TextBox Height="Auto"
                                  HorizontalAlignment="Right"
                                  x:Name="Deductions"
                                  Text="{Binding Path=DeductionPercentage, Mode=TwoWay}"
@@ -90,7 +132,7 @@
                                  Foreground="Red"
                                  FontSize="22"
                                  FontWeight="Normal"
-                                 BorderBrush="Red" />
+                                 BorderBrush="Red" />-->
                         <TextBlock Height="Auto"
                                    Width="Auto"
                                    HorizontalAlignment="Right"
@@ -119,7 +161,28 @@
                     </StackPanel>
 
 
-                    <TextBox Height="Auto"
+                    <toolkit:PhoneTextBox Height="Auto"
+                                          HorizontalAlignment="Center"
+                                          x:Name="NumberOfHours"
+                                          IsEnabled="{Binding IsHoursDisplayValueEnabled, Mode=TwoWay}"
+                                          InputScope="CurrencyAmount"
+                                          Text="{Binding HoursDisplayValue, Mode=TwoWay}"
+                                          VerticalAlignment="Top"
+                                          Grid.Row="2"
+                                          Grid.Column="1"
+                                          Width="130"
+                                          HorizontalContentAlignment="Right"
+                                          FlowDirection="RightToLeft"
+                                          FontSize="22"
+                                          FontWeight="ExtraBlack"
+                                          Margin="60,0,36,0">
+
+                        <i:Interaction.Behaviors>
+                            <WageCalculator_Model:SelectAllTextBoxBehavior />
+                        </i:Interaction.Behaviors>
+                    </toolkit:PhoneTextBox>
+
+                    <!--<TextBox Height="Auto"
                              HorizontalAlignment="Center"
                              x:Name="NumberOfHours"
                              IsEnabled="{Binding IsHoursDisplayValueEnabled, Mode=TwoWay}"
@@ -133,7 +196,7 @@
                              FlowDirection="RightToLeft"
                              FontSize="22"
                              FontWeight="ExtraBlack"
-                             Margin="60,0,36,0" />
+                             Margin="60,0,36,0" />-->
 
                     <StackPanel Orientation="Horizontal"
                                 Grid.Row="3">
@@ -148,7 +211,28 @@
                                               FontFamily="Segoe WP Semibold" />
                     </StackPanel>
 
-                    <TextBox Height="Auto"
+                    <toolkit:PhoneTextBox Height="Auto"
+                                          HorizontalAlignment="Center"
+                                          x:Name="NumberOfWeeks"
+                                          IsEnabled="{Binding IsWeeksDisplayValueEnabled, Mode=TwoWay}"
+                                          InputScope="Number"
+                                          Text="{Binding WeeksDisplayValue, Mode=TwoWay}"
+                                          VerticalAlignment="Top"
+                                          Grid.Row="3"
+                                          Grid.Column="1"
+                                          Width="130"
+                                          HorizontalContentAlignment="Right"
+                                          FlowDirection="RightToLeft"
+                                          FontSize="22"
+                                          FontWeight="ExtraBlack"
+                                          Margin="60,0,36,0">
+
+                        <i:Interaction.Behaviors>
+                            <WageCalculator_Model:SelectAllTextBoxBehavior />
+                        </i:Interaction.Behaviors>
+                    </toolkit:PhoneTextBox>
+
+                    <!--<TextBox Height="Auto"
                              HorizontalAlignment="Center"
                              x:Name="NumberOfWeeks"
                              IsEnabled="{Binding IsWeeksDisplayValueEnabled, Mode=TwoWay}"
@@ -162,7 +246,7 @@
                              FlowDirection="RightToLeft"
                              FontSize="22"
                              FontWeight="ExtraBlack"
-                             Margin="60,0,36,0" />
+                             Margin="60,0,36,0" />-->
 
 
 
@@ -376,8 +460,7 @@
                                        FlowDirection="RightToLeft"
                                        FontSize="{Binding Path=dFontSize, Mode=TwoWay}"
                                        Margin="0,0,4,0"
-                                       VerticalAlignment="Stretch"
-                                        />
+                                       VerticalAlignment="Stretch" />
                             <TextBlock HorizontalAlignment="Right"
                                        x:Name="BiWeeklySalary"
                                        Text="{Binding BiWeeklyPayText, Mode=TwoWay}"
@@ -482,7 +565,27 @@
                                VerticalAlignment="Center"
                                Grid.Row="0"
                                Style="{StaticResource PhoneTextNormalStyle}" />
-                    <TextBox Height="Auto"
+                    <toolkit:PhoneTextBox Height="Auto"
+                                          HorizontalAlignment="Right"
+                                          x:Name="BaseSalaryPay"
+                                          Text="{Binding Path=BaseAnnualSalary,  Mode=TwoWay}"
+                                          InputScope="CurrencyAmount"
+                                          VerticalAlignment="Top"
+                                          Grid.Column="1"
+                                          HorizontalContentAlignment="Right"
+                                          FlowDirection="RightToLeft"
+                                          Width="175"
+                                          Foreground="Green"
+                                          FontSize="22"
+                                          Margin="0"
+                                          FontWeight="Normal"
+                                          BorderBrush="Green">
+
+                        <i:Interaction.Behaviors>
+                            <WageCalculator_Model:SelectAllTextBoxBehavior />
+                        </i:Interaction.Behaviors>
+                    </toolkit:PhoneTextBox>
+                    <!--<TextBox Height="Auto"
                              HorizontalAlignment="Right"
                              x:Name="BaseSalaryPay"
                              Text="{Binding Path=BaseAnnualSalary,  Mode=TwoWay}"
@@ -496,7 +599,7 @@
                              FontSize="22"
                              Margin="0"
                              FontWeight="Normal"
-                             BorderBrush="Green" />
+                             BorderBrush="Green" />-->
 
                     <TextBlock Height="Auto"
                                Name="textBlockSalDeductions"
@@ -508,7 +611,28 @@
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 HorizontalAlignment="Right">
-                        <TextBox Height="Auto"
+                        <toolkit:PhoneTextBox Height="Auto"
+                                              HorizontalAlignment="Right"
+                                              x:Name="SalDeductions"
+                                              Text="{Binding Path=SalDeductionPercentage, Mode=TwoWay}"
+                                              InputScope="CurrencyAmount"
+                                              VerticalAlignment="Top"
+                                              Grid.Row="1"
+                                              Grid.Column="1"
+                                              Width="130"
+                                              HorizontalContentAlignment="Right"
+                                              FlowDirection="RightToLeft"
+                                              Foreground="Red"
+                                              FontSize="22"
+                                              FontWeight="Normal"
+                                              BorderBrush="Red">
+
+                            <i:Interaction.Behaviors>
+                                <WageCalculator_Model:SelectAllTextBoxBehavior />
+                            </i:Interaction.Behaviors>
+                        </toolkit:PhoneTextBox>
+
+                        <!--<TextBox Height="Auto"
                                  HorizontalAlignment="Right"
                                  x:Name="SalDeductions"
                                  Text="{Binding Path=SalDeductionPercentage, Mode=TwoWay}"
@@ -522,7 +646,7 @@
                                  Foreground="Red"
                                  FontSize="22"
                                  FontWeight="Normal"
-                                 BorderBrush="Red" />
+                                 BorderBrush="Red" />-->
                         <TextBlock Height="Auto"
                                    Width="Auto"
                                    HorizontalAlignment="Right"
@@ -570,7 +694,29 @@
                     </StackPanel>
 
 
-                    <TextBox Height="Auto"
+                    <toolkit:PhoneTextBox Height="Auto"
+                                          HorizontalAlignment="Center"
+                                          x:Name="NumberOfSalaryHours"
+                                          IsEnabled="{Binding IsSalHoursDisplayValueEnabled, Mode=TwoWay}"
+                                          InputScope="CurrencyAmount"
+                                          Text="{Binding SalHoursDisplayValue, Mode=TwoWay}"
+                                          VerticalAlignment="Top"
+                                          Grid.Row="2"
+                                          Grid.Column="1"
+                                          Width="130"
+                                          HorizontalContentAlignment="Right"
+                                          FlowDirection="RightToLeft"
+                                          FontSize="22"
+                                          FontWeight="ExtraBlack"
+                                          Margin="60,0,36,0">
+
+                        <i:Interaction.Behaviors>
+                            <WageCalculator_Model:SelectAllTextBoxBehavior />
+                        </i:Interaction.Behaviors>
+                    </toolkit:PhoneTextBox>
+
+
+                    <!--<TextBox Height="Auto"
                              HorizontalAlignment="Center"
                              x:Name="NumberOfSalaryHours"
                              IsEnabled="{Binding IsSalHoursDisplayValueEnabled, Mode=TwoWay}"
@@ -584,7 +730,7 @@
                              FlowDirection="RightToLeft"
                              FontSize="22"
                              FontWeight="ExtraBlack"
-                             Margin="60,0,36,0" />
+                             Margin="60,0,36,0" />-->
 
 
 
@@ -600,7 +746,29 @@
                                               FontFamily="Segoe WP Semibold" />
                     </StackPanel>
 
-                    <TextBox Height="Auto"
+
+                    <toolkit:PhoneTextBox Height="Auto"
+                                          HorizontalAlignment="Center"
+                                          x:Name="NumberOfSalaryWeeks"
+                                          IsEnabled="{Binding IsSalWeeksDisplayValueEnabled, Mode=TwoWay}"
+                                          InputScope="Number"
+                                          Text="{Binding SalWeeksDisplayValue, Mode=TwoWay}"
+                                          VerticalAlignment="Top"
+                                          Grid.Row="3"
+                                          Grid.Column="1"
+                                          Width="130"
+                                          HorizontalContentAlignment="Right"
+                                          FlowDirection="RightToLeft"
+                                          FontSize="22"
+                                          FontWeight="ExtraBlack"
+                                          Margin="60,0,36,0">
+
+                        <i:Interaction.Behaviors>
+                            <WageCalculator_Model:SelectAllTextBoxBehavior />
+                        </i:Interaction.Behaviors>
+                    </toolkit:PhoneTextBox>
+
+                    <!--<TextBox Height="Auto"
                              HorizontalAlignment="Center"
                              x:Name="NumberOfSalaryWeeks"
                              IsEnabled="{Binding IsSalWeeksDisplayValueEnabled, Mode=TwoWay}"
@@ -614,7 +782,7 @@
                              FlowDirection="RightToLeft"
                              FontSize="22"
                              FontWeight="ExtraBlack"
-                             Margin="60,0,36,0" />
+                             Margin="60,0,36,0" />-->
 
 
 
@@ -866,14 +1034,12 @@
                                        HorizontalAlignment="Left" />
                         </Grid>
                     </StackPanel>
-
-
-
-
                 </Grid>
             </controls:PivotItem>
             <!--Pivot item three-->
-            <controls:PivotItem Header="About">
+            <controls:PivotItem x:Name="AboutPivotItem"
+                                Header="About"
+                                Margin="12,28,12,0">
                 <!--<ScrollViewer>-->
 
 
@@ -906,7 +1072,7 @@
                         <StackPanel Grid.Row="1"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
-                            <TextBlock Text="Version 1.1.0"
+                            <TextBlock Text="Version 1.3.0"
                                        TextWrapping="NoWrap"
                                        Style="{StaticResource PhoneTextNormalStyle}"
                                        Margin="12,6,12,12" />
@@ -964,7 +1130,7 @@
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Bottom"
                                     Margin="12,2">
-                            <TextBlock Text="2011-2012 © Copyright J3nius"
+                            <TextBlock Text="2011-2013 © Copyright J3nius"
                                        TextWrapping="NoWrap"
                                        Margin="12,6,12,6" />
                         </StackPanel>
@@ -976,7 +1142,19 @@
 
             </controls:PivotItem>
         </controls:Pivot>
-        <my:AdControl AdUnitId="78520"
+
+        <my:AdControl Foreground="Red"
+                      AdUnitId="Image480_80"
+                      ApplicationId="test_client"
+                      Height="80"
+                      HorizontalAlignment="Left"
+                      Margin="0,6,0,0"
+                      Name="adControl1"
+                      VerticalAlignment="Bottom"
+                      Width="480"
+                      IsAutoRefreshEnabled="True" />
+
+        <!--<my:AdControl AdUnitId="78520"
                       ApplicationId="e6f59a2c-b51b-4e2d-8922-9c8cfc72ede4"
                       Height="80"
                       HorizontalAlignment="Stretch"
@@ -985,7 +1163,7 @@
                       VerticalAlignment="Bottom"
                       Width="480"
                       Grid.ColumnSpan="2"
-                      Grid.Row="8" />
+                      Grid.Row="8" />-->
     </Grid>
 
     <!--Sample code showing usage of ApplicationBar-->
