@@ -109,10 +109,10 @@
                                               Width="130"
                                               HorizontalContentAlignment="Right"
                                               FlowDirection="RightToLeft"
-                                              Foreground="Red"
+                                              Foreground="RoyalBlue"
                                               FontSize="22"
                                               FontWeight="Normal"
-                                              BorderBrush="Red">
+                                              BorderBrush="DarkCyan">
 
                             <i:Interaction.Behaviors>
                                 <WageCalculator_Model:SelectAllTextBoxBehavior />
@@ -147,7 +147,7 @@
 
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal"
+                    <!--<StackPanel Orientation="Horizontal"
                                 Grid.Row="2">
                         <toolkit:ToggleSwitch x:Name="IsNotHourlyFullTime"
                                               Grid.Row="2"
@@ -158,8 +158,18 @@
                                               VerticalContentAlignment="Stretch"
                                               FlowDirection="LeftToRight"
                                               FontFamily="Segoe WP Semibold" />
-                    </StackPanel>
+                    </StackPanel>-->
 
+                    <TextBlock x:Name="HoursWorkedTextBlock"
+                               Margin="12,0,0,-12"
+                               Style="{StaticResource PhoneTextNormalStyle}"
+                               TextWrapping="Wrap"
+                               Text="Hours Worked"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Width="216"
+                               Grid.Row="2"
+                               Grid.ColumnSpan="2" />
 
                     <toolkit:PhoneTextBox Height="Auto"
                                           HorizontalAlignment="Center"
@@ -198,7 +208,7 @@
                              FontWeight="ExtraBlack"
                              Margin="60,0,36,0" />-->
 
-                    <StackPanel Orientation="Horizontal"
+                    <!--<StackPanel Orientation="Horizontal"
                                 Grid.Row="3">
                         <toolkit:ToggleSwitch x:Name="IsNotHourlyFullYear"
                                               Grid.Row="3"
@@ -209,8 +219,16 @@
                                               VerticalContentAlignment="Stretch"
                                               FlowDirection="LeftToRight"
                                               FontFamily="Segoe WP Semibold" />
-                    </StackPanel>
+                    </StackPanel>-->
 
+                    <TextBlock x:Name="WeeksWorkedTextBlock"
+                               Margin="12,0,0,-12"
+                               Style="{StaticResource PhoneTextNormalStyle}"
+                               TextWrapping="Wrap"
+                               Text="Weeks Worked"
+                               Grid.Row="3"
+                               Grid.ColumnSpan="2"
+                               Grid.Column="0" />
                     <toolkit:PhoneTextBox Height="Auto"
                                           HorizontalAlignment="Center"
                                           x:Name="NumberOfWeeks"
@@ -231,6 +249,28 @@
                             <WageCalculator_Model:SelectAllTextBoxBehavior />
                         </i:Interaction.Behaviors>
                     </toolkit:PhoneTextBox>
+
+                    <CheckBox x:Name="FullTime40hoursCheckbox"
+                              IsChecked="{Binding IsFullTime, Mode=TwoWay}"
+                              Content="{Binding HoursContentValue, Mode=TwoWay}"
+                              HorizontalAlignment="Left"
+                              Width="228"
+                              d:LayoutOverrides="Height"
+                              Grid.Row="2"
+                              Height="69"
+                              VerticalAlignment="Bottom"
+                              Margin="0,0,0,0" />
+
+                    <CheckBox x:Name="WeeksWorkedCheckbox"
+                              IsChecked="{Binding IsFullYear, Mode=TwoWay}"
+                              Content="{Binding WeeksContentValue, Mode=TwoWay}"
+                              HorizontalAlignment="Left"
+                              d:LayoutOverrides="Height"
+                              Grid.Row="3"
+                              Height="69"
+                              VerticalAlignment="Bottom"
+                              Margin="0,0,0,0" />
+
 
                     <!--<TextBox Height="Auto"
                              HorizontalAlignment="Center"
@@ -268,7 +308,7 @@
                             <TextBlock TextDecorations="Underline"
                                        Grid.Column="0"
                                        HorizontalAlignment="Right"
-                                       Foreground="Red"
+                                       Foreground="RoyalBlue"
                                        Margin="2,0"
                                        Text="Net Pay"
                                        FontWeight="SemiBold"
@@ -314,7 +354,7 @@
                                        Text="{Binding Path=BaseHourlyRateDeductionText, Mode=TwoWay}"
                                        FlowDirection="RightToLeft"
                                        FontSize="22"
-                                       Foreground="Red"
+                                       Foreground="RoyalBlue"
                                        Height="30"
                                        VerticalAlignment="Top"
                                        Margin="2,0" />
@@ -367,7 +407,7 @@
                                        Grid.Column="0"
                                        FlowDirection="RightToLeft"
                                        FontSize="22"
-                                       Foreground="Red"
+                                       Foreground="RoyalBlue"
                                        Margin="2,0" />
                             <TextBlock Height="Auto"
                                        HorizontalAlignment="Center"
@@ -411,7 +451,7 @@
                                        Text="{Binding WeeklyPayDeductionText, Mode=TwoWay}"
                                        FlowDirection="RightToLeft"
                                        FontSize="22"
-                                       Foreground="Red"
+                                       Foreground="RoyalBlue"
                                        Margin="0,0,2,0" />
                             <TextBlock Text="/"
                                        Grid.Column="1"
@@ -450,10 +490,11 @@
                                        Text="{Binding BiWeeklyPayDeductionText, Mode=TwoWay}"
                                        FlowDirection="RightToLeft"
                                        FontSize="{Binding dFontSize, Mode=TwoWay}"
-                                       Foreground="Red"
+                                       Foreground="RoyalBlue"
                                        FontWeight="Normal"
-                                       VerticalAlignment="Stretch"
-                                       Margin="0,0,4,0" />
+                                       VerticalAlignment="Top"
+                                       Margin="0,0,4,0"
+                                       Height="30" />
 
                             <TextBlock Text="/"
                                        Grid.Column="1"
@@ -500,7 +541,7 @@
                                        VerticalAlignment="Stretch"
                                        Grid.Column="0"
                                        FlowDirection="RightToLeft"
-                                       Foreground="Red"
+                                       Foreground="RoyalBlue"
                                        Width="Auto"
                                        FontSize="{Binding dFontSize, Mode=TwoWay}"
                                        Margin="2,0" />
@@ -622,10 +663,10 @@
                                               Width="130"
                                               HorizontalContentAlignment="Right"
                                               FlowDirection="RightToLeft"
-                                              Foreground="Red"
+                                              Foreground="RoyalBlue"
                                               FontSize="22"
                                               FontWeight="Normal"
-                                              BorderBrush="Red">
+                                              BorderBrush="DarkCyan">
 
                             <i:Interaction.Behaviors>
                                 <WageCalculator_Model:SelectAllTextBoxBehavior />
@@ -677,7 +718,7 @@
                              Margin="0"
                              FontWeight="Normal" />-->
 
-                    <StackPanel Orientation="Horizontal"
+                    <!--<StackPanel Orientation="Horizontal"
                                 Grid.Row="2">
                         <toolkit:ToggleSwitch x:Name="IsNotSalaryFullTime"
                                               Grid.Row="2"
@@ -691,8 +732,31 @@
                                               Height="auto"
                                               VerticalContentAlignment="Stretch"
                                               FontFamily="Segoe WP Semibold" />
-                    </StackPanel>
+                    </StackPanel>-->
 
+                    <TextBlock x:Name="SalHoursWorkedTextBlock"
+                               Margin="12,0,0,-12"
+                               Style="{StaticResource PhoneTextNormalStyle}"
+                               TextWrapping="Wrap"
+                               Text="Hours Worked"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Width="216"
+                               Grid.Row="2"
+                               Grid.ColumnSpan="2" />
+
+
+
+                    <CheckBox x:Name="SalFullTime40hoursCheckbox"
+                              IsChecked="{Binding IsSalFullTime, Mode=TwoWay}"
+                              Content="{Binding SalHoursContentValue, Mode=TwoWay}"
+                              HorizontalAlignment="Left"
+                              Width="228"
+                              d:LayoutOverrides="Height"
+                              Grid.Row="2"
+                              Height="69"
+                              VerticalAlignment="Bottom"
+                              Margin="0,0,0,0" />
 
                     <toolkit:PhoneTextBox Height="Auto"
                                           HorizontalAlignment="Center"
@@ -734,7 +798,7 @@
 
 
 
-                    <StackPanel Orientation="Horizontal"
+                    <!--<StackPanel Orientation="Horizontal"
                                 Grid.Row="3">
                         <toolkit:ToggleSwitch x:Name="IsNotSalaryFullYear"
                                               Grid.Row="3"
@@ -744,8 +808,26 @@
                                               FontSize="20"
                                               VerticalAlignment="Top"
                                               FontFamily="Segoe WP Semibold" />
-                    </StackPanel>
+                    </StackPanel>-->
 
+                    <TextBlock x:Name="SalWeeksWorkedTextBlock"
+                               Margin="12,0,0,-12"
+                               Style="{StaticResource PhoneTextNormalStyle}"
+                               TextWrapping="Wrap"
+                               Text="Weeks Worked"
+                               Grid.Row="3"
+                               Grid.ColumnSpan="2"
+                               Grid.Column="0" />
+
+                    <CheckBox x:Name="SalWeeksWorkedCheckbox"
+                              IsChecked="{Binding IsSalFullYear, Mode=TwoWay}"
+                              Content="{Binding SalWeeksContentValue, Mode=TwoWay}"
+                              HorizontalAlignment="Left"
+                              d:LayoutOverrides="Height"
+                              Grid.Row="3"
+                              Height="69"
+                              VerticalAlignment="Bottom"
+                              Margin="0,0,0,0" />
 
                     <toolkit:PhoneTextBox Height="Auto"
                                           HorizontalAlignment="Center"
@@ -804,7 +886,7 @@
                             <TextBlock TextDecorations="Underline"
                                        Grid.Column="0"
                                        HorizontalAlignment="Right"
-                                       Foreground="Red"
+                                       Foreground="RoyalBlue"
                                        Margin="2,0"
                                        Text="Net Pay"
                                        FontWeight="SemiBold" />
@@ -856,7 +938,7 @@
                                        HorizontalAlignment="Right"
                                        FlowDirection="RightToLeft"
                                        FontSize="22"
-                                       Foreground="Red"
+                                       Foreground="RoyalBlue"
                                        Width="Auto"
                                        Margin="2" />
                             <TextBlock Height="Auto"
@@ -907,7 +989,7 @@
                                        Text="{Binding Path=SalBiWeeklyPayDeductionText, Mode=TwoWay}"
                                        Grid.Column="0"
                                        FlowDirection="RightToLeft"
-                                       Foreground="Red"
+                                       Foreground="RoyalBlue"
                                        FontSize="22"
                                        Width="Auto"
                                        Margin="2" />
@@ -960,7 +1042,7 @@
                                        HorizontalAlignment="Right"
                                        Grid.Column="0"
                                        FlowDirection="RightToLeft"
-                                       Foreground="Red"
+                                       Foreground="RoyalBlue"
                                        FontSize="22"
                                        Width="Auto"
                                        Margin="2" />
@@ -1011,7 +1093,7 @@
                                        HorizontalAlignment="Right"
                                        Grid.Column="0"
                                        FlowDirection="RightToLeft"
-                                       Foreground="Red"
+                                       Foreground="RoyalBlue"
                                        FontSize="22"
                                        Width="Auto"
                                        Margin="2" />
@@ -1072,7 +1154,7 @@
                         <StackPanel Grid.Row="1"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
-                            <TextBlock Text="Version 1.3.0"
+                            <TextBlock Text="Version 1.5.0.2"
                                        TextWrapping="NoWrap"
                                        Style="{StaticResource PhoneTextNormalStyle}"
                                        Margin="12,6,12,12" />
@@ -1143,6 +1225,9 @@
             </controls:PivotItem>
         </controls:Pivot>
 
+
+
+        <!--Test ad-->
         <my:AdControl Foreground="Red"
                       AdUnitId="Image480_80"
                       ApplicationId="test_client"
@@ -1154,16 +1239,17 @@
                       Width="480"
                       IsAutoRefreshEnabled="True" />
 
-        <!--<my:AdControl AdUnitId="78520"
+        <!--Real Ad-->
+        <!--<my:AdControl Foreground="Red"
+                      AdUnitId="144366"
                       ApplicationId="e6f59a2c-b51b-4e2d-8922-9c8cfc72ede4"
                       Height="80"
-                      HorizontalAlignment="Stretch"
-                      Margin="0,0,0,0"
+                      HorizontalAlignment="Left"
+                      Margin="0,6,0,0"
                       Name="adControl1"
                       VerticalAlignment="Bottom"
                       Width="480"
-                      Grid.ColumnSpan="2"
-                      Grid.Row="8" />-->
+                      IsAutoRefreshEnabled="True" />-->
     </Grid>
 
     <!--Sample code showing usage of ApplicationBar-->

@@ -36,7 +36,7 @@ namespace WageCalculator.Views
 
                 emailComposeTask.Body = string.Empty;
 
-                emailComposeTask.Subject = "The Wagenator (ver 1.1.0) - Support and Feedback";
+                emailComposeTask.Subject = "The Wagenator (ver 1.5.0.2) - Support and Feedback";
 
                 emailComposeTask.Show();
             }
@@ -53,7 +53,7 @@ namespace WageCalculator.Views
                 SmsComposeTask smsComposeTask = new SmsComposeTask();
 
                 smsComposeTask.To = "jaseporter@gmail.com";
-                smsComposeTask.Body = "RE: The Wagenator v1.1.0 - ";
+                smsComposeTask.Body = "RE: The Wagenator v1.5.0.2 - ";
 
                 smsComposeTask.Show();
 

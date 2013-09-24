@@ -808,7 +808,7 @@ namespace WageCalculator.ViewModel
 
         public decimal SalBiWeeklyPayDeduction
         {
-            get { return SalBiWeeklyPay - (SalBiWeeklyPay * (DeductionPercentage / 100)); }
+            get { return SalBiWeeklyPay - (SalBiWeeklyPay * (SalDeductionPercentage / 100)); }
         }
 
         public string SalBiWeeklyPayDeductionText
