@@ -1228,7 +1228,7 @@
 
 
         <!--Test ad-->
-        <my:AdControl Foreground="Red"
+        <!--<my:AdControl Foreground="Red"
                       AdUnitId="Image480_80"
                       ApplicationId="test_client"
                       Height="80"
@@ -1237,10 +1237,10 @@
                       Name="adControl1"
                       VerticalAlignment="Bottom"
                       Width="480"
-                      IsAutoRefreshEnabled="True" />
+                      IsAutoRefreshEnabled="True" />-->
 
         <!--Real Ad-->
-        <!--<my:AdControl Foreground="Red"
+        <my:AdControl Foreground="Red"
                       AdUnitId="144366"
                       ApplicationId="e6f59a2c-b51b-4e2d-8922-9c8cfc72ede4"
                       Height="80"
@@ -1249,7 +1249,7 @@
                       Name="adControl1"
                       VerticalAlignment="Bottom"
                       Width="480"
-                      IsAutoRefreshEnabled="True" />-->
+                      IsAutoRefreshEnabled="True" />
     </Grid>
 
     <!--Sample code showing usage of ApplicationBar-->

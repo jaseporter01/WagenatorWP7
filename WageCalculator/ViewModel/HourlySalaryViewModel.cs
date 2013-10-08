@@ -1,7 +1,7 @@
 ﻿using System;
 using GalaSoft.MvvmLight;
 using WageCalculator.Model;
-using System.ComponentModel;
+//using System.ComponentModel;
 
 namespace WageCalculator.ViewModel
 {
@@ -56,8 +56,8 @@ namespace WageCalculator.ViewModel
             _SalWeeksContentValue = "Full Year";
 
             // Cori Code
-            Recalculate();
-            SalRecalculate();
+            //Recalculate();
+            //SalRecalculate();
         }
 
         ////public override void Cleanup()
